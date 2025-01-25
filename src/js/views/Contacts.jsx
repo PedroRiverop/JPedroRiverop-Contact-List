@@ -3,7 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import ContactCard from "../component/ContactCard.jsx";
 import DeleteModal from "../component/DeleteModal.jsx";
-import "../../styles/Contact.css";
+
+
 
 const Contact = () => {
   const navigate = useNavigate();
@@ -49,18 +50,15 @@ const Contact = () => {
 
       
 
-
-      <h1>
-        Hola {store.user ? store.user.toUpperCase() : ", Bienvenido"}!
-      </h1>
-
      
 
+
+      
 
       <div className="container w-50 mb-4">
         <input
           type="text"
-          placeholder="Ingresa tu usuario"
+          placeholder="Ingresa tu nombre"
           className="form-control"
           onChange={(e) => setUserInput(e.target.value)}
           value={userInput}
@@ -89,6 +87,8 @@ const Contact = () => {
      
 
      
+     
+
       <div className="container contact-list w-75 text-end">
         {store.contacts.length > 0 ? (
           store.contacts.map((contact, index) => (
@@ -106,7 +106,7 @@ const Contact = () => {
         ) : (
           <div className="alert alert-warning text-center" role="alert">
             {store.user
-              ? "¡Ups! No tienes ningún contacto agendado."
+              ? "No tienes ningún contacto guardado."
               : "Debes ingresar un usuario para ver la agenda o crear una nueva."}
           </div>
         )}

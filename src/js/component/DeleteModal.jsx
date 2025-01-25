@@ -1,23 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "../../styles/DeleteModal.css";
 
 const DeleteModal = ({
   showModal,
   handleCloseModal,
   handleDelete,
-  title = "Are you sure?",
-  bodyText = "If you delete this, it cannot be undone.",
-  confirmText = "Yes, delete it!",
-  cancelText = "Cancel",
+  title = "Esta seguro?",
+  bodyText = "Si elimina el contacto, no podra recuperarlo.",
+  confirmText = "Si, estoy seguro!",
+  cancelText = "Cancelar",
 }) => {
-  if (!showModal) return null; // Si no se debe mostrar el modal, no renderizamos nada
+  if (!showModal) return null;
 
   return (
     <div
       className="modal show d-block"
       tabIndex="-1"
       role="dialog"
-      style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
     >
       <div className="modal-dialog">
         <div className="modal-content">

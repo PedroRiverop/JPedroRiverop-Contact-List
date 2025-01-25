@@ -12,5 +12,10 @@
 }
 
 .contact-info{
-    font-size: .75rem
+    font-size: .75rem;
+    
+}
+
+.contact-card {
+    border-radius: 15px;
 }
