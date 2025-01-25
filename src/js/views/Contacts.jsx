@@ -51,7 +51,7 @@ const Contact = () => {
 
 
       <h1>
-        Hola {store.user ? store.user.toUpperCase() : "extraño!!"}!
+        Hola {store.user ? store.user.toUpperCase() : ", Bienvenido"}!
       </h1>
 
      
@@ -79,7 +79,8 @@ const Contact = () => {
       <div className="container text-end w-75">
         {store.user && (
           <Link to="/addNewContact" className="btn btn-success me-1 mb-2" id="addContact">
-            Añadir Nuevo Contacto
+            Nuevo Contacto 
+            <i class="fa-solid fa-user-plus ms-2"></i>
           </Link>
         )}
       </div>

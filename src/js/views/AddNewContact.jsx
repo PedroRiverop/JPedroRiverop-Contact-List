@@ -52,7 +52,7 @@ const AddNewContact = () => {
   
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value.trim() });
+    setFormData({ ...formData, [name]: value });
   };
 
 
@@ -129,7 +129,7 @@ const AddNewContact = () => {
           Guardar
         </button>
       </form>
-      <Link to="/">Regresar a la lista de contactos</Link>
+      <Link to="/"> Retornar  <i className="fa-solid fa-arrow-left me-2"></i></Link>
     </div>
   );
 };

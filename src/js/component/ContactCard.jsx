@@ -1,17 +1,17 @@
 import React from "react";
 import "../../styles/ContactCard.css";
 import PropTypes from "prop-types";
+import userIcon from "../../img/User-icon.png";
 
 const ContactCard = (props) => {
   
 
 
   const {
-    contactImg = "",
-    contactName = "This is a Default Value",
-    contactAddress = "Address is missing",
-    contactPhone = "Phone number is missing",
-    contactMail = "E-Mail is missing",
+    contactName = "Sin nombre",
+    contactAddress = "Sin dirección",
+    contactPhone = "Sin telefono",
+    contactMail = "Sin email",
     contactId,
     onDelete = () => console.log("No se ha asociado una función para eliminar"),
     onEdit = () => console.log("No se ha asociado una función para editar"),
@@ -29,7 +29,7 @@ const ContactCard = (props) => {
         <div className="col-md-2 col-sm-12 d-flex justify-content-center align-items-center">
           <div id="avatar-container">
             <img
-              src={contactImg || "https://via.placeholder.com/100"}
+              src={userIcon}
               alt="contact-avatar"
               className="img-fluid rounded-circle"
             />
