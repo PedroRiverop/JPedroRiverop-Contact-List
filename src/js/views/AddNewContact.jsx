@@ -18,6 +18,10 @@ const AddNewContact = () => {
 
 
   useEffect(() => {
+    console.log("Se ejecutó useEffect");
+    console.log("contactId desde useParams:", contactId);
+    console.log("store.contacts:", store.contacts);
+
     if (!store.user) {
 
       navigate("/"); 
@@ -26,17 +30,23 @@ const AddNewContact = () => {
     }
 
     if (contactId) {
-  
-      const contacto = store.contacts.find((c) => c.id == contactId);
+      
+      console.log(`Editando contacto with ID: ${contactId}`);
+
+      const contacto = store.contacts.find((contactoActual) => contactoActual.id == contactId);
       if (contacto) {
+        console.log("Contacto encontrado: ", contacto);
         setFormData({
           name: contacto.name || "",
           phone: contacto.phone || "",
           email: contacto.email || "",
           address: contacto.address || "",
         });
+      } else {
+        console.warn("No se encontró un contacto con ese ID. Redirigiendo...");
+        navigate("/");
       }
-    }
+    };
   }, [contactId, store.user, store.contacts, navigate]);
 
   
